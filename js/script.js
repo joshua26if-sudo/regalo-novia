@@ -3,7 +3,7 @@
 // ============================================
 // ⚠️ CAMBIA ESTO por la contraseña real
 // Sugerencias: fecha de inicio "15062023", un apodo, "teamo", etc.
-const PASSWORD_CORRECTA = "nuestra-palabra-secreta";
+const PASSWORD_CORRECTA = "yabasta";
 
 let intentosFallidos = 0;
 const MAX_INTENTOS = 3;
@@ -223,7 +223,7 @@ function iniciarPagina() {
 
   // ⚠️ PERSONALIZA ESTAS 3 FRASES
   const LINEA1 = "Para la persona más especial del mundo...";
-  const LINEA2 = "Feliz Cumpleaños, [SU NOMBRE] ❤";
+  const LINEA2 = "Feliz Cumpleaños, STEFANI ❤";
   const LINEA3 = "Te escribí algo que quiero que leas.";
 
   let introYaAbierta = false;
