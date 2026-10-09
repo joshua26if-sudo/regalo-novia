@@ -938,3 +938,223 @@ body {
     height: 220px;
   }
 }
+
+/* ============================================
+   PANTALLA DE BLOQUEO
+   ============================================ */
+.lock-screen {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    #2a0a1f 0%,
+    #1a0512 60%,
+    #0d0209 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  overflow: hidden;
+}
+
+.lock-screen.hidden {
+  opacity: 0;
+  transform: scale(1.05);
+  pointer-events: none;
+}
+
+/* Partículas de fondo */
+.lock-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.lock-particles span {
+  position: absolute;
+  color: rgba(255, 107, 157, 0.6);
+  font-size: 16px;
+  animation: floatUp linear infinite;
+}
+
+/* Caja central */
+.lock-box {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 240, 245, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 107, 157, 0.25);
+  border-radius: 28px;
+  padding: 55px 45px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow:
+    0 30px 80px rgba(255, 71, 126, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  animation: lockEntrada 0.9s cubic-bezier(0.2, 0.8, 0.3, 1.1);
+}
+
+@keyframes lockEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.lock-icon {
+  font-size: 50px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 20px rgba(255, 107, 157, 0.6));
+  animation: latido 1.6s ease-in-out infinite;
+}
+
+.lock-title {
+  font-family: "Playfair Display", serif;
+  color: #ffc2d6;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.lock-sub {
+  color: rgba(255, 194, 214, 0.7);
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.lock-input {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 50px;
+  border: 1.5px solid rgba(255, 107, 157, 0.35);
+  background: rgba(255, 240, 245, 0.08);
+  color: #fff;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  letter-spacing: 2px;
+  outline: none;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s,
+    background 0.3s;
+  margin-bottom: 18px;
+}
+
+.lock-input::placeholder {
+  color: rgba(255, 194, 214, 0.45);
+  letter-spacing: 1px;
+}
+
+.lock-input:focus {
+  border-color: #ff477e;
+  background: rgba(255, 240, 245, 0.12);
+  box-shadow: 0 0 0 4px rgba(255, 71, 126, 0.15);
+}
+
+/* Botón */
+.lock-btn {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ff477e, #ff6b9d);
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  letter-spacing: 1px;
+  box-shadow: 0 10px 30px rgba(255, 71, 126, 0.5);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.lock-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(255, 71, 126, 0.7);
+}
+
+.lock-btn:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.lock-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Mensaje de error */
+.lock-error {
+  color: #ff8fb3;
+  font-size: 0.9rem;
+  margin-top: 18px;
+  min-height: 1.2em;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.lock-error.visible {
+  opacity: 1;
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-8px);
+  }
+  40%,
+  80% {
+    transform: translateX(8px);
+  }
+}
+
+/* Animación de éxito */
+.lock-screen.success .lock-box {
+  animation: exitoBox 0.6s ease forwards;
+}
+
+@keyframes exitoBox {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .lock-box {
+    padding: 40px 28px;
+  }
+  .lock-title {
+    font-size: 1.6rem;
+  }
+  .lock-icon {
+    font-size: 42px;
+  }
+}
