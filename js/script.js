@@ -1,5 +1,5 @@
 // ============================================
-// 🔐 CONTRASEÑA
+// 🔐 CONTRASEÑA a
 // ============================================
 // ⚠️ CAMBIA ESTO por la contraseña real
 // Sugerencias: fecha de inicio "15062023", un apodo, "teamo", etc.
