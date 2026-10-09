@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feliz Cumpleaños ❤️</title>
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ===== BARRA DE PROGRESO ===== -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- ===== BOTÓN DE MÚSICA ===== -->
+    <button class="music-btn" id="musicBtn" title="Música">🎵</button>
+    <audio id="musica" src="audio/musica.mp3" loop></audio>
+
+    <!-- ============================================
+       INTRO: SOBRE + CARTA + PARTÍCULAS
+       ============================================ -->
+    <section class="intro" id="intro">
+      <!-- Partículas de fondo -->
+      <div class="intro-particles" id="introParticles"></div>
+
+      <!-- ETAPA 1: SOBRE CERRADO -->
+      <div class="intro-stage sobre-stage" id="sobreStage">
+        <p class="intro-hint">Tengo algo para ti...</p>
+
+        <div class="sobre" id="sobre">
+          <div class="sobre-tapa"></div>
+          <div class="sobre-cuerpo">
+            <span class="sobre-corazon">❤</span>
+          </div>
+          <div class="sobre-sello">Para ti</div>
+        </div>
+
+        <button class="intro-btn" id="btnAbrir">Abrir mi carta 💌</button>
+      </div>
+
+      <!-- ETAPA 2: CARTA ABIERTA CON MÁQUINA DE ESCRIBIR -->
+      <div class="intro-stage carta-stage" id="cartaStage">
+        <div class="carta-papel">
+          <p class="carta-linea" id="linea1"></p>
+          <p class="carta-linea grande" id="linea2"></p>
+          <p class="carta-linea" id="linea3"></p>
+          <span class="cursor" id="cursor">|</span>
+        </div>
+
+        <button
+          class="intro-btn btn-scroll"
+          id="btnScroll"
+          style="opacity: 0; pointer-events: none"
+        >
+          Abrir mi regalo 🎁
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================================
+       CONTADOR
+       ============================================ -->
+    <section class="section contador-section">
+      <h2 class="section-title">Llevamos juntos</h2>
+      <div class="contador" id="contador">
+        <div class="contador-item">
+          <span id="dias">0</span>
+          <p>Días</p>
+        </div>
+        <div class="contador-item">
+          <span id="horas">0</span>
+          <p>Horas</p>
+        </div>
+        <div class="contador-item">
+          <span id="minutos">0</span>
+          <p>Minutos</p>
+        </div>
+        <div class="contador-item">
+          <span id="segundos">0</span>
+          <p>Segundos</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+       TIMELINE: NUESTRA HISTORIA
+       ============================================ -->
+    <section class="section timeline-section">
+      <h2 class="section-title">Nuestra Historia</h2>
+      <div class="timeline">
+        <!-- HITO 1 -->
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>El día que nos conocimos</h3>
+            <p>[Escribe aquí cómo se conocieron]</p>
+
+            <div class="carrusel" data-carrusel>
+              <div class="carrusel-track">
+                <img
+                  src="img/foto1.jpg"
+                  alt="Momento 1"
+                  class="carrusel-img"
+                  data-img="img/foto1.jpg"
+                />
+                <img
+                  src="img/foto2.jpg"
+                  alt="Momento 2"
+                  class="carrusel-img"
+                  data-img="img/foto2.jpg"
+                />
+                <img
+                  src="img/foto3.jpg"
+                  alt="Momento 3"
+                  class="carrusel-img"
+                  data-img="img/foto3.jpg"
+                />
+              </div>
+              <button class="carrusel-btn prev" aria-label="Anterior">‹</button>
+              <button class="carrusel-btn next" aria-label="Siguiente">
+                ›
+              </button>
+              <div class="carrusel-dots"></div>
+            </div>
+
+            <p class="timeline-caption">
+              "Ese día no sabía que estaba conociendo a mi persona favorita"
+            </p>
+          </div>
+        </div>
+
+        <!-- HITO 2 -->
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Nuestra primera cita</h3>
+            <p>[Cuenta ese momento especial]</p>
+
+            <div class="carrusel" data-carrusel>
+              <div class="carrusel-track">
+                <img
+                  src="img/foto4.jpg"
+                  alt="Momento 1"
+                  class="carrusel-img"
+                  data-img="img/foto4.jpg"
+                />
+                <img
+                  src="img/foto5.jpg"
+                  alt="Momento 2"
+                  class="carrusel-img"
+                  data-img="img/foto5.jpg"
+                />
+              </div>
+              <button class="carrusel-btn prev" aria-label="Anterior">‹</button>
+              <button class="carrusel-btn next" aria-label="Siguiente">
+                ›
+              </button>
+              <div class="carrusel-dots"></div>
+            </div>
+
+            <p class="timeline-caption">
+              "Nervios, risas y ganas de que no terminara"
+            </p>
+          </div>
+        </div>
+
+        <!-- HITO 3 -->
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>El día que dijimos "te amo"</h3>
+            <p>[Ese momento]</p>
+
+            <div class="carrusel" data-carrusel>
+              <div class="carrusel-track">
+                <img
+                  src="img/foto6.jpg"
+                  alt="Momento 1"
+                  class="carrusel-img"
+                  data-img="img/foto6.jpg"
+                />
+                <img
+                  src="img/foto7.jpg"
+                  alt="Momento 2"
+                  class="carrusel-img"
+                  data-img="img/foto7.jpg"
+                />
+                <img
+                  src="img/foto8.jpg"
+                  alt="Momento 3"
+                  class="carrusel-img"
+                  data-img="img/foto8.jpg"
+                />
+              </div>
+              <button class="carrusel-btn prev" aria-label="Anterior">‹</button>
+              <button class="carrusel-btn next" aria-label="Siguiente">
+                ›
+              </button>
+              <div class="carrusel-dots"></div>
+            </div>
+
+            <p class="timeline-caption">"Lo supe, y no me dio miedo"</p>
+          </div>
+        </div>
+
+        <!-- HITO 4 -->
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Hoy, tu cumpleaños</h3>
+            <p>Y seguimos escribiendo nuestra historia...</p>
+
+            <div class="carrusel" data-carrusel>
+              <div class="carrusel-track">
+                <img
+                  src="img/foto9.jpg"
+                  alt="Momento 1"
+                  class="carrusel-img"
+                  data-img="img/foto9.jpg"
+                />
+                <img
+                  src="img/foto10.jpg"
+                  alt="Momento 2"
+                  class="carrusel-img"
+                  data-img="img/foto10.jpg"
+                />
+              </div>
+              <button class="carrusel-btn prev" aria-label="Anterior">‹</button>
+              <button class="carrusel-btn next" aria-label="Siguiente">
+                ›
+              </button>
+              <div class="carrusel-dots"></div>
+            </div>
+
+            <p class="timeline-caption">"Y lo que falta por vivir juntos ❤️"</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+       GALERÍA
+       ============================================ -->
+    <section class="section galeria-section">
+      <h2 class="section-title">Momentos juntos</h2>
+      <div class="galeria">
+        <img src="img/foto1.jpg" alt="Momento 1" class="fade-in" />
+        <img src="img/foto2.jpg" alt="Momento 2" class="fade-in" />
+        <img src="img/foto3.jpg" alt="Momento 3" class="fade-in" />
+        <img src="img/foto4.jpg" alt="Momento 4" class="fade-in" />
+        <img src="img/foto5.jpg" alt="Momento 5" class="fade-in" />
+        <img src="img/foto6.jpg" alt="Momento 6" class="fade-in" />
+        <img src="img/foto7.jpg" alt="Momento 7" class="fade-in" />
+        <img src="img/foto8.jpg" alt="Momento 8" class="fade-in" />
+        <img src="img/foto9.jpg" alt="Momento 9" class="fade-in" />
+        <img src="img/foto10.jpg" alt="Momento 10" class="fade-in" />
+        <img src="img/foto11.jpg" alt="Momento 11" class="fade-in" />
+        <img src="img/foto12.jpg" alt="Momento 12" class="fade-in" />
+      </div>
+    </section>
+
+    <!-- ============================================
+       RAZONES
+       ============================================ -->
+    <section class="section razones-section">
+      <h2 class="section-title">Razones por las que te amo</h2>
+      <ul class="razones">
+        <li class="fade-in">Por tu sonrisa que ilumina mis días</li>
+        <li class="fade-in">Por cómo me haces reír sin esfuerzo</li>
+        <li class="fade-in">Por tu forma de ver el mundo</li>
+        <li class="fade-in">Porque contigo todo es más fácil</li>
+        <li class="fade-in">Por tu paciencia y tu cariño</li>
+        <li class="fade-in">Porque eres mi persona favorita</li>
+        <!-- Agrega todas las que quieras -->
+      </ul>
+    </section>
+
+    <!-- ============================================
+       CARTA FINAL
+       ============================================ -->
+    <section class="section final-section">
+      <div class="carta fade-in">
+        <h2>Feliz cumpleaños, mi amor</h2>
+        <p>
+          [Escribe aquí tu carta personal. Cuéntale lo mucho que la amas, lo
+          agradecido que estás de tenerla y lo que deseas para ella en este
+          nuevo año de vida.]
+        </p>
+        <button class="btn-amor" id="btnAmor">Te amo ❤️</button>
+      </div>
+    </section>
+
+    <!-- ===== CANVAS DE CONFETI ===== -->
+    <canvas id="confetti"></canvas>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div class="lightbox" id="lightbox">
+      <span class="lightbox-close" id="lightboxClose">&times;</span>
+      <img src="" alt="" id="lightboxImg" />
+    </div>
+
+    <!-- ===== SCRIPT ===== -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
